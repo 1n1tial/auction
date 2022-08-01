@@ -1,0 +1,27 @@
+{
+  "name": "auction",
+  "version": "1.0.0",
+  "description": "an online auctioning site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1n1tial/auction.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/1n1tial/auction/issues"
+  },
+  "homepage": "https://github.com/1n1tial/auction#readme",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "stripe": "^9.16.0"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.1"
+  }
+}
