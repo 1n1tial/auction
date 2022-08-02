@@ -49,7 +49,7 @@ app.get("/",(req,res)=>{
     res.set({
         "Allow-access-Allow-Origin": '*'
     })
-    return res.redirect('upload.html');
+    return res.redirect('about.html');
 }).listen(3000);
 
 
