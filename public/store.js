@@ -1,4 +1,10 @@
-ready()
+if (document.readyState == 'loading') {
+    document.addEventListener('DOMContentLoaded', ready)
+} else {
+    ready()
+    
+
+}
 
 function getTimeRemaining(endtime) {
     const total = Date.parse(endtime) - Date.parse(new Date());
@@ -44,10 +50,12 @@ function getTimeRemaining(endtime) {
     
   }
   
-  const finish = new Date(Date.parse(new Date()) + 10 * 24 * 60 * 60 * 1000);
-  initializeClock('clockdiv', finish);
+  
 
 function ready() {
+    const finish = new Date(Date.parse(new Date()) + 10 * 24 * 60 * 60 * 1000);
+    initializeClock('clockdiv', finish);
+    
     var removeCartItemBtns = document.getElementsByClassName('btn-danger')
     for (var i = 0; i < removeCartItemBtns.length; i++) {
         var btn = removeCartItemBtns[i]
