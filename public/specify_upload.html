@@ -4,6 +4,8 @@
         <title>auction! | Main</title>
         <meta name="description" content="This is the description">
         <link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+
     </head>
     <body>
         <header class="main-header index-header-design">
@@ -21,26 +23,41 @@
             <h1 class="band-name band-name-large">Auction</h1>
             <!-- <button class="btn btn-header btn-play">&#9656;</button> -->
         </header>
-        <section class='content-section container'>
-            <h2 class="section-header">Upload Your Item</h2>
-            <label for="name">Name:</label>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+    
+                </div>
+                <div class="col-md-6 main">
+                    <form action="/sign_up" method="POST">
+                        <!-- <h2>SignUp Form</h2> -->
+                        <input type="text" class="box" id="name" name="name" placeholder="Name" required />
+                        <br>
+                        <input type="text" class="box" id="category" name="category" placeholder="Category(전자기기, 자동차, 학용품, 책 중 하나)" required />
+                        <br>
+                        <input type="text" class="box" id="startPrice" name="startPrice" placeholder="Start Price" required />
+                        <br>
+                        <input type="text" class="box" id="imageSource" name="imageSource" placeholder="Image Source(href link)" required />
+                        <br>
+                        <input type="submit" value="Submit" id="submit" />
+                    </form>
+                </div>
+                <div class="col-md-3">
+                </div>
+            </div>
+        </div>
+        <!-- <h2 class="section-header">Upload Your Item</h2>
+        <form action="/sign_up" method="POST">
+            <input type="text" class="box" id="name" name="name" placeholder="Name" required />
             <br>
-            <input type="text" id="name" name="name" required
-                minlength="4" maxlength="8" size="10" class="item-name-input">
+            <input type="text" class="box" id="category" name="category" placeholder="Category(전자기기, 자동차, 학용품, 책 중 하나)" required />
             <br>
-            <label for="name">Description:</label>
+            <input type="text" class="box" id="start-price" name="start-price" placeholder="Start Price" required />
             <br>
-            <input type="text" id="name" name="name" required
-                minlength="4" maxlength="8" size="10" class="item-description-input">
+            <input type="text" class="box" id="image-source" name="image-source" placeholder="Image Source(href link)" required />
             <br>
-            <label for="name">Image:</label>
-            <br>
-            <input type="text" id="name" name="name" required
-                minlength="4" maxlength="8" size="10" class="item-name-input">
-            <br>
-            <button class="btn btn-upload">UPLOAD</button>
-
-        </section>
+            <input type="submit" value="Submit" id="submit" />
+        </form> -->
         <footer class="main-footer">
             <div class="container main-footer-container">
                 <h3 class="contact-text">Contact</h3>

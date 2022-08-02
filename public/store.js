@@ -16,38 +16,36 @@ function getTimeRemaining(endtime) {
     };
   }
   
-  function initializeClock(id, endtime) {
-    const clock = document.getElementById(id);
-    const daysSpan = clock.querySelector('.days');
-    const hoursSpan = clock.querySelector('.hours');
-    const minutesSpan = clock.querySelector('.minutes');
-    const secondsSpan = clock.querySelector('.seconds');
+  function initializeClock(_class, endtime) {
+    const clockContainer = document.getElementsByClassName(_class);
+    for (var i=0; i < clockContainer.length; i++) {
+        var clock = clockContainer[i]
+        const daysSpan = clock.querySelector('.days');
+        const hoursSpan = clock.querySelector('.hours');
+        const minutesSpan = clock.querySelector('.minutes');
+        const secondsSpan = clock.querySelector('.seconds');
   
-    function updateClock() {
-      const t = getTimeRemaining(endtime);
+        function updateClock() {
+        const t = getTimeRemaining(endtime);
+    
+        daysSpan.innerHTML = t.days;
+        hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+        minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+        secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+    
+        if (t.total <= 0) {
+            clearInterval(timeinterval);
+        }
+        }
   
-      daysSpan.innerHTML = t.days;
-      hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
-      minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
-      secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
-  
-      if (t.total <= 0) {
-        clearInterval(timeinterval);
-      }
+        updateClock();
+        const timeinterval = setInterval(updateClock, 1000);
     }
-  
-    updateClock();
-    const timeinterval = setInterval(updateClock, 1000);
+    
   }
   
-  const deadline1 = new Date(Date.parse(new Date()) + 10 * 24 * 60 * 60 * 1000);
-  initializeClock('clockdiv1', deadline1);
-  const deadline2 = new Date(Date.parse(new Date()) + 10 * 24 * 60 * 60 * 1000);
-  initializeClock('clockdiv2', deadline2);
-  const deadline3 = new Date(Date.parse(new Date()) + 10 * 24 * 60 * 60 * 1000);
-  initializeClock('clockdiv3', deadline3);
-  const deadline4 = new Date(Date.parse(new Date()) + 10 * 24 * 60 * 60 * 1000);
-  initializeClock('clockdiv4', deadline4);
+  const finish = new Date(Date.parse(new Date()) + 10 * 24 * 60 * 60 * 1000);
+  initializeClock('clockdiv', finish);
 
 function ready() {
     var removeCartItemBtns = document.getElementsByClassName('btn-danger')
